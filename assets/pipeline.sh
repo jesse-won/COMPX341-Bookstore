@@ -29,22 +29,18 @@ then
 fi
 
 # Add and commit changes to version control
-COMMIT_PATTERN="^\d+(.\d+)*\s(Add|Update|Fix)\s.*$"
-COMMIT_PATTERN="^(Add|Update|Fix)$"
+COMMIT_PATTERN="^[0-9]+(\.[0-9]+)*\s(Add|Update|Fix)\s.+$"
 if [[ $1 =~ $COMMIT_PATTERN ]]
 then
-    if [[ $1 =~ "^\d+(.\d+)*" ]]
-    then
-        VERSION=$BASH_REMATCH[0]
-    fi
+    VERSION=$(echo $1 | grep -oP '^[0-9]+(\.[0-9]+)*')
     echo 'pipeline -> info -> Preparing to deploy version ' $VERSION ' ...'
     echo 'pipeline -> info -> Adding files...'
-    # git add .
+    git add .
     echo 'pipeline -> info -> Commiting changes...'
-    # git commit -m 'COMPX341-21A-V' $1
+    git commit -m "COMPX341-21A-V ${1}"
     handle_error 'git commit -m $1'
     echo 'pipeline -> info -> Deploying...'
-    # git push origin main
+    git push origin main
     handle_error 'git push origin main'
 
     echo 'pipeline -> pass -> Deployment completed successfully!'
