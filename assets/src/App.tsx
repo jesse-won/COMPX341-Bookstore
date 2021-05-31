@@ -17,7 +17,7 @@ interface AppState {
   isAuthenticating: boolean;
 }
 
-class App extends Component<AppProps, AppState> {
+class App xtends Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
   
