@@ -16,6 +16,7 @@ function handle_error {
 # Static verification test
 python3 test-comments.py
 handle_error 'python3 test-comments.py'
+echo 'pipeline -> pass -> Comments check in all .ts files test successful!'
 
 # Build and Run application
 npm run build

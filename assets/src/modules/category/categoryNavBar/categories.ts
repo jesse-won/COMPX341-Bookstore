@@ -1,3 +1,5 @@
+// Name                    ID
+// Jesse Reyneke-Barnard   1351388
 export const categories = {
   cooks: "Cookbooks",
   database: "Database",

@@ -1,3 +1,5 @@
+// Name                    ID
+// Jesse Reyneke-Barnard   1351388
 export default {
   apiGateway: {
     REGION: "us-east-1",
