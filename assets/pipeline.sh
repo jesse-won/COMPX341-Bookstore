@@ -13,7 +13,7 @@ function handle_error {
 # Update modules
 # npm install
 
-# Static verification test
+# Static verification test comment headers
 python3 test-comments.py
 handle_error 'python3 test-comments.py'
 echo 'pipeline -> pass -> Comments check in all .ts files test successful!'
@@ -23,7 +23,10 @@ npm run build
 handle_error 'npm run build'
 echo 'pipeline -> pass -> Application build successful!'
 
-# TODO: Perform Jest tests
+# Unit tests
+npm run test
+handle_error 'npm run test'
+echo 'pipeline -> pass -> Application unit tests successful!'
 
 if [ -z "$1" ] # If no commit message was supplied, don't deploy
 then
