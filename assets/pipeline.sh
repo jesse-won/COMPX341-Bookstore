@@ -16,14 +16,14 @@ function handle_error {
 # Static verification test comment headers
 python3 test-comments.py
 handle_error 'python3 test-comments.py'
-echo 'pipeline -> pass -> Comments check in all .ts files test successful!'
+echo 'pipeline -> pass -> Comment headers check in all .ts files test successful!'
 
 # Build and Run application
 npm run build
 handle_error 'npm run build'
 echo 'pipeline -> pass -> Application build successful!'
 
-# Unit tests
+# Functional verification tests
 npm run test
 handle_error 'npm run test'
 echo 'pipeline -> pass -> Application unit tests successful!'
