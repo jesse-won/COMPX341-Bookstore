@@ -13,7 +13,9 @@ function handle_error {
 # Update modules
 # npm install
 
-# TODO: Perform static tests
+# Static verification test
+python3 test-comments.py
+handle_error 'python3 test-comments.py'
 
 # Build and Run application
 npm run build
