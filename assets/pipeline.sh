@@ -41,7 +41,7 @@ then
     git commit -m "COMPX341-21A-V ${1}"
     handle_error 'git commit -m $1'
     echo 'pipeline -> info -> Deploying...'
-    git push origin main
+    git push origin master
     handle_error 'git push origin master'
 
     echo 'pipeline -> pass -> Deployment completed successfully!'
