@@ -32,7 +32,7 @@ fi
 COMMIT_PATTERN="^[0-9]+(\.[0-9]+)*\s(Add|Update|Fix)\s.+$"
 if [[ $1 =~ $COMMIT_PATTERN ]]
 then
-    cd../
+    cd ../
     VERSION=$(echo $1 | grep -oP '^[0-9]+(\.[0-9]+)*')
     echo 'pipeline -> info -> Preparing to deploy version ' $VERSION ' ...'
     echo 'pipeline -> info -> Adding files...'
